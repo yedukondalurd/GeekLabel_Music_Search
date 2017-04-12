@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="glApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Search</title>
+    <link rel="stylesheet" href="build/css/style.css"/>
+</head>
+<body ng-controller="MainController">
+<header>
+    <div class="gl-row">
+        <div class="gl-logo gl-float-left"></div>
+        <div class="gl-float-right gl-header-info">Powered By Spotify</div>
+    </div>
+    <div class="gl-clear-float"></div>
+</header>
+<section>
+    <div class="gl-row gl-hero-img-wrapper">
+        <img class="gl-hero-img" src="assets/images/hero-img@2x.png">
+    </div>
+    <div class="gl-row gl-page-img-wrapper">
+        <img class="gl-page-img" src="assets/images/Page%201@2x.png">
+    </div>
+</section>
+<section class="gl-search-wrapper">
+    <div class="gl-search">
+        <input class="gl-search-input" type="text" ng-model="searchKey">
+        <button class="gl-search-btn" type="button" ng-click="searchArtistOrAlbum(searchKey)">Search</button>
+    </div>
+</section>
+<section class="gl-list-wrapper">
+    <ul class="gl-list">
+        <li ng-if="artist.images[2].url" ng-repeat="artist in artistData.items"
+            ng-click="showPreview(artist)">
+            <span class="gl-img-holder">
+                <img src="{{artist.images[2].url}}" width="265px" height="270px">
+                <i class="gl-icon-artist"></i>
+            </span>
+            <span class="gl-name-holder">{{artist.name}}</span>
+        </li>
+    </ul>
+</section>
+<preview-modal info='modalShown' data='previewData' show='modalShown'></preview-modal>
+<footer>
+    Designed by Geek Label - Powered by Spotify
+</footer>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="build/js/gl-main.js"></script>
+</body>
+</html>

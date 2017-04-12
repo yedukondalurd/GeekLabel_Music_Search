@@ -1,0 +1,289 @@
+@import "variables";
+@import "gl-mixins";
+@import "fonts";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: @body-bg;
+  font-family: 'Raleway-Light';
+  color: @text-color;
+}
+
+ul {
+  margin: 0;
+  padding: 0px;
+  list-style: none;
+}
+
+header {
+  padding: 27px 33px;
+}
+
+footer {
+  text-align: center;
+  background-color: @dark-black;
+  padding: 30px 0px;
+}
+
+.gl-logo {
+  background-image: url("../../assets/images/gl-logo@2x.png");
+  width: 80px;
+  background-position: 0px 0px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 90px;
+}
+
+.gl-float-left {
+  float: left;
+}
+
+.gl-float-right {
+  float: right;
+}
+
+.gl-clear-float {
+  clear: both;
+}
+
+.gl-row {
+  display: inline-block;
+  width: 100%;
+}
+
+.gl-hero-img-wrapper {
+  text-align: center;
+}
+
+.gl-page-img-wrapper {
+  text-align: center;
+}
+
+.gl-hero-img {
+  width: 100%;
+  margin-top: -66px;
+  max-width: 500px;
+}
+
+.gl-search-wrapper {
+  background-color: @dark-black;
+}
+
+.gl-search {
+  height: 80px;
+  margin: 0 auto;
+  width: 400px;
+  top: 13px;
+  position: relative;
+  .gl-search-input {
+    height: 50px;
+    width: 280px;
+    overflow: hidden;
+    outline: none;
+    background-color: @white;
+    .border-radius(40px);
+    border: none;
+    padding-right: 100px;
+    padding-left: 25px;
+    margin: 0;
+  }
+  .gl-search-btn {
+    border: none;
+    padding: 0;
+    outline: none;
+    margin: 0;
+    .border-radius(40px);
+    background-color: @royal-heath;
+    position: absolute;
+    right: 0px;
+    color: @white;
+    top: 6px;
+    cursor: pointer;
+    height: 40px;
+    width: 90px;
+  }
+}
+
+.gl-list-wrapper {
+  background-image: url("../../assets/images/Magnify@2x.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #383A49;
+  min-height: 300px;
+}
+
+.gl-icon-artist {
+  position: absolute;
+  width: 25px;
+  bottom: 15px;
+  left: 15px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../assets/images/artist-icon@2x.png");
+}
+
+.gl-list {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-start;;
+  justify-content: flex-start;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+  li {
+    margin: 10px;
+    cursor: pointer;
+    .border-radius(5px);
+    overflow: hidden;
+  }
+  .gl-img-holder {
+    img {
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+    }
+    display: block;
+    position: relative;
+  }
+  .gl-name-holder {
+    display: block;
+    color: black;
+    margin-top: -5px;
+    padding: 20px 5px;
+    background: white;
+  }
+}
+
+.gl-modal-overlay {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: @black;
+  opacity: 0.4;
+}
+
+.gl-modal {
+  width: 100%;
+  height: 100%;
+}
+
+.gl-modal-dialog {
+  z-index: 10000;
+  position: absolute;
+  .border-radius(5px);
+  overflow: hidden;
+  max-width: 750px;
+  height: 700px;
+  top: 30px;
+  margin: 0 auto;
+  color: black;
+  right: 0;
+  left: 0;
+  background-color: @white;
+  .gl-modal-img-wrapper {
+    background: @black;
+  }
+  img {
+    opacity: 0.6;
+    background: @black;
+  }
+  .gl-modal-dialog-content {
+    padding: 10px;
+    text-align: left;
+  }
+
+  .gl-modal-close {
+    width: 20px;
+    z-index: 10;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../assets/images/Cross@2x.png");
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 120%;
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'arial', 'sans-serif';
+  }
+}
+
+.gl-modal-list {
+  li {
+    display: table-row;
+  }
+  .gl-modal-img-holder {
+    display: table-cell;
+  }
+  .gl-modal-name-holder {
+    display: table-cell;
+    padding-left: 20px;
+    vertical-align: middle;
+  }
+}
+
+/*Responsive design*/
+@media all and (max-width: 321px) {
+  header {
+    font-size: 12px;
+    padding: 10px 20px;
+    font-family: 'Raleway-Medium';
+  }
+
+  .gl-logo {
+    width: 40px;
+    background-position: 0 8px;
+    height: 50px;
+  }
+
+  .gl-header-info {
+    margin-top: 20px;
+  }
+
+  .gl-hero-img-wrapper {
+    text-align: center;
+  }
+
+  .gl-hero-img {
+    width: 50%;
+    margin-top: 0px;
+  }
+
+  .gl-list {
+    li {
+      display: -webkit-flex;
+      display: flex;
+      width: 265px;
+      background-color: @white;
+    }
+    .gl-img-holder {
+      img {
+        background-color: @black;
+        width: 80px;
+        height: 80px;
+        margin-bottom: -5px;
+      }
+    }
+  }
+
+  .gl-icon-artist {
+    bottom: 5px;
+    left: 5px;
+  }
+}

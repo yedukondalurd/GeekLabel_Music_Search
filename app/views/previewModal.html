@@ -1,0 +1,21 @@
+<div class='gl-modal' ng-show='show'>
+    <div class='gl-modal-overlay' ng-click='hideModal()'></div>
+    <div class='gl-modal-dialog' ng-style='dialogStyle'>
+        <div class='gl-modal-close' ng-click='hideModal()'></div>
+        <div class="gl-modal-img-wrapper">
+            <img src="{{data.imageUrl}}" width="100%;" height="320px;">
+        </div>
+        <div class='gl-modal-dialog-content'>
+            <h3>Albums</h3>
+            <ul class="gl-modal-list">
+                <li ng-if="album.images[2].url" ng-repeat="album in data.albumData"
+                    ng-click="showPreview(artist)">
+            <span class="gl-modal-img-holder">
+                <img src="{{album.images[2].url}}">
+            </span>
+                    <span class="gl-modal-name-holder">{{album.name}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

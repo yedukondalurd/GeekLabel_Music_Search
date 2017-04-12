@@ -1,0 +1,21 @@
+{
+  "name": "geeklabel_music_search",
+  "description": "Music serach app for GeekLabel",
+  "main": "index.js",
+  "authors": [
+    "Yedukondalu"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/yedukondalurd/GeekLabel_Music_Search",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
+}
